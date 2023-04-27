@@ -17,11 +17,18 @@ namespace csharp_oop_shop_2
         //COSTRUTTORE
         public Acqua(string nome, string descrizione, double prezzo, double iva, double litri, int ph, string sorgente) : base(nome, descrizione, prezzo, iva)
         {
+            // non posso creare un’acqua se la bottiglia ha un ph negativo, oppure superiore a 10
             if (ph < 0 || ph > 10)
             {
                 throw new Exception("pH non valido");
             }
-            
+
+            //non posso avere una capienza(litri) sopra la capienza massima o negativa
+            if (litri < 0 || litri > 1.5)
+            {
+                throw new Exception("Capienza non valida");
+            }
+
             this.litri = litri;
             this.ph = ph;
             this.sorgente = sorgente;
@@ -43,34 +50,7 @@ namespace csharp_oop_shop_2
         {
             return this.sorgente;
         }
-
-        //SETTERS
-        // non posso creare un’acqua se la bottiglia ha un ph negativo, oppure superiore a 10
-        /*public void SetPh(int ph)
-        {
-            if (ph < 0 || ph > 10)
-            {
-                throw new ArgumentOutOfRangeException("pH non valido");
-            } else
-            { 
-                this.ph = ph;
-            }
-        }*/
-
-        //non posso avere una capienza(litri) sopra la capienza massima o negativa
-        public void SetLitri(double litri)
-        {
-            if (litri < 0 || litri > 1.5)
-            {
-                throw new ArgumentOutOfRangeException("Capienza non valida");
-            }
-            else
-            {
-                this.litri = litri;
-            }
-
-        }
-
+                
         //METODI
         public void Bevi(double litriDaBere)
         {
