@@ -86,6 +86,7 @@ namespace csharp_oop_shop_2
 
         public void Riempi(double litriDaMettere)
         {
+            //riempie la bottiglia di acqua e restituisce un eccezione se supero la sua capienza massima
             if (litriDaMettere > this.litri)
             {
                 Console.WriteLine("è troppa!!!");
