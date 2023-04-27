@@ -37,6 +37,20 @@ namespace csharp_oop_shop_2
             return this.sorgente;
         }
 
+        //SETTERS
+        // non posso creare un’acqua se la bottiglia ha un ph negativo, oppure superiore a 10
+        public void SetPH(int ph)
+        {
+            if (ph < 0 || ph > 10)
+            {
+                throw new ArgumentOutOfRangeException("ph non valido");
+            } else
+            { 
+                this.ph = ph;
+            }
+        }
+        //non posso avere una capienza sopra la capienza massima o negativa
+
         //METODI
         public void Bevi(double litriDaBere)
         {
