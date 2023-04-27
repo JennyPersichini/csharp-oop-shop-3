@@ -36,6 +36,14 @@ Lavatrice.StampaProdotto();*/
 
 //prodotto(nome, descrizione, prezzo, iva, litri, ph, sorgente)
 
-Acqua bottiglia = new Acqua("Vitasnella", "Acqua naturale", 0.5, 5, 1.5, 7, "vitas");
+try 
+{
 
-bottiglia.StampaProdotto();
+    Acqua bottiglia = new Acqua("Vitasnella", "Acqua naturale", 0.5, 5, 1.5, 7, "vitas");
+
+    bottiglia.StampaProdotto();
+
+} catch (Exception ex)
+{
+
+}

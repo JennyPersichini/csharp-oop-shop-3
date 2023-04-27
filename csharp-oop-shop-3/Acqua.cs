@@ -57,11 +57,11 @@ namespace csharp_oop_shop_2
             //se l’acqua finisce, restituisce un eccezione
             if (litriDaBere < 0)
             {
-                throw new ArgumentOutOfRangeException("Non puoi bere in negativo");
+                throw new Exception("Non puoi bere in negativo");
             }
             else if (litriDaBere > this.litri)
             {
-                throw new ArgumentOutOfRangeException("Non basta");
+                throw new Exception("Non basta");
             }
             else
             {
@@ -75,15 +75,15 @@ namespace csharp_oop_shop_2
             //riempie la bottiglia di acqua e restituisce un eccezione se supero la sua capienza massima
             if (litriDaMettere < 0)
             {
-                throw new ArgumentOutOfRangeException("Non puoi riempire in negativo");
+                throw new Exception("Non puoi riempire in negativo");
             }
             else if (litriDaMettere > this.litri)
             {
-                throw new ArgumentOutOfRangeException("è troppa!!!");
+                throw new Exception("è troppa!!!");
             }
             else if (litriDaMettere < this.litri)
             {
-                throw new ArgumentOutOfRangeException("Metti, metti!!!");
+                throw new Exception("Metti, metti!!!");
             }
             else
             {
