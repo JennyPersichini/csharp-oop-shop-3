@@ -9,7 +9,7 @@ namespace csharp_oop_shop_2
     public class Acqua : Prodotto
     {
         //ATTRIBUTI
-        private double litri = 1.5;
+        private double litri = 1.5; //capienza massima
         private int ph;
         private string sorgente;
 
@@ -43,13 +43,26 @@ namespace csharp_oop_shop_2
         {
             if (ph < 0 || ph > 10)
             {
-                throw new ArgumentOutOfRangeException("ph non valido");
+                throw new ArgumentOutOfRangeException("pH non valido");
             } else
             { 
                 this.ph = ph;
             }
         }
-        //non posso avere una capienza sopra la capienza massima o negativa
+
+        //non posso avere una capienza(litri) sopra la capienza massima o negativa
+        public void SetCapienza(double litri)
+        {
+            if (litri < 0 || litri > 1.5)
+            {
+                throw new ArgumentOutOfRangeException("Capienza non valida");
+            }
+            else
+            {
+                this.litri = litri;
+            }
+
+        }
 
         //METODI
         public void Bevi(double litriDaBere)
