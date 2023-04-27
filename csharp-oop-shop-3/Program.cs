@@ -38,12 +38,30 @@ Lavatrice.StampaProdotto();*/
 
 try 
 {
-
     Acqua bottiglia = new Acqua("Vitasnella", "Acqua naturale", 0.5, 5, 1.5, 7, "vitas");
-
     bottiglia.StampaProdotto();
-
-} catch (Exception ex)
+} catch (Exception e)
 {
+    Console.WriteLine("Errore: " + e.Message);
+}
 
+try
+{
+    Acqua bottiglia = new Acqua("Vitasnella", "Acqua naturale", 0.5, 5, 1.5, 7, "vitas");
+    bottiglia.Bevi(1);
+    bottiglia.StampaProdotto();
+} catch (Exception e)
+{
+    Console.WriteLine("Errore: " + e.Message);
+}
+
+try
+{
+    Acqua bottiglia = new Acqua("Vitasnella", "Acqua naturale", 0.5, 5, 1.5, 7, "vitas");
+    bottiglia.Riempi(3);
+    bottiglia.StampaProdotto();
+}
+catch (Exception e)
+{
+    Console.WriteLine("Errore: " + e.Message);
 }
