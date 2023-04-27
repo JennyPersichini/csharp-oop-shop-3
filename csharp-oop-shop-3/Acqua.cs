@@ -51,7 +51,7 @@ namespace csharp_oop_shop_2
         }
 
         //non posso avere una capienza(litri) sopra la capienza massima o negativa
-        public void SetCapienza(double litri)
+        public void SetLitri(double litri)
         {
             if (litri < 0 || litri > 1.5)
             {
@@ -67,16 +67,21 @@ namespace csharp_oop_shop_2
         //METODI
         public void Bevi(double litriDaBere)
         {
-            if (this.litri - litriDaBere > 0)
+            //se l’acqua finisce, restituisce un eccezione
+            if (litriDaBere < 0)
             {
-                this.litri = this.litri - litriDaBere;
-                Console.WriteLine("Hai bevuto " + litriDaBere + " litri");
+                throw new ArgumentOutOfRangeException("Non puoi bere in negativo");
+            }
+            else if (litriDaBere > this.litri)
+            {
+                SetLitri(0);
+                throw new ArgumentOutOfRangeException("Non basta");
             }
             else
             {
-                Console.WriteLine("Oh-oh! è finita!");
-                this.litri = 0;
+                Console.WriteLine("Hai bevuto " + litriDaBere + " litri");
             }
+
         }
 
         public void Riempi(double litriDaMettere)
