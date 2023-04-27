@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -74,7 +75,6 @@ namespace csharp_oop_shop_2
             }
             else if (litriDaBere > this.litri)
             {
-                SetLitri(0);
                 throw new ArgumentOutOfRangeException("Non basta");
             }
             else
@@ -87,18 +87,23 @@ namespace csharp_oop_shop_2
         public void Riempi(double litriDaMettere)
         {
             //riempie la bottiglia di acqua e restituisce un eccezione se supero la sua capienza massima
-            if (litriDaMettere > this.litri)
+            if (litriDaMettere < 0)
             {
-                Console.WriteLine("è troppa!!!");
+                throw new ArgumentOutOfRangeException("Non puoi riempire in negativo");
+            }
+            else if (litriDaMettere > this.litri)
+            {
+                throw new ArgumentOutOfRangeException("è troppa!!!");
             }
             else if (litriDaMettere < this.litri)
             {
-                Console.WriteLine("Metti, metti!!!");
+                throw new ArgumentOutOfRangeException("Metti, metti!!!");
             }
             else
             {
                 Console.WriteLine("Bottiglia piena!!!!");
             }
+
         }
 
         public void Svuota()
@@ -106,6 +111,10 @@ namespace csharp_oop_shop_2
             this.litri = 0;
             Console.WriteLine("Hai svuotato la bottiglia!");
         }
+
+        //un metodo statico convertiInGalloni(double litri) che presa una quantità di litri restituisca la conversione dei litri in galloni,
+        //sapendo che 1 litro è equivalente a 3,785 galloni
+
 
         public override void StampaProdotto()
         {
