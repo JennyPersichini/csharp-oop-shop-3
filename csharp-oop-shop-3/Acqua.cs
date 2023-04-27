@@ -40,7 +40,7 @@ namespace csharp_oop_shop_2
 
         //SETTERS
         // non posso creare un’acqua se la bottiglia ha un ph negativo, oppure superiore a 10
-        public void SetPH(int ph)
+        public void SetPh(int ph)
         {
             if (ph < 0 || ph > 10)
             {
@@ -112,16 +112,23 @@ namespace csharp_oop_shop_2
             Console.WriteLine("Hai svuotato la bottiglia!");
         }
 
-        //un metodo statico convertiInGalloni(double litri) che presa una quantità di litri restituisca la conversione dei litri in galloni,
-        //sapendo che 1 litro è equivalente a 3,785 galloni
-
-
         public override void StampaProdotto()
         {
             base.StampaProdotto();
             Console.WriteLine("Litri: " + string.Format("{0:F1}", (this.litri)));
             Console.WriteLine("Sorgente: " + sorgente);
             Console.WriteLine("pH: " + ph);
+        }
+
+        //un metodo statico convertiInGalloni(double litri) che presa una quantità di litri restituisca la conversione dei litri in galloni,
+        //sapendo che 1 litro è equivalente a 3,785 galloni
+        public static double convertiInGalloni(double litri)
+        {
+            const double galloni = 3.785;
+
+            double convGalloni = (litri * galloni);
+
+            return convGalloni;
         }
     }
 }
