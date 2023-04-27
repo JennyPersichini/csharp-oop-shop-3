@@ -30,3 +30,10 @@ Elettrodomestico Lavatrice = new("Lavatrice", "Lava i panni", 260, 20, "Beko", "
 Lavatrice.StampaProdotto();*/
 /*Lavatrice.Accenditi();*/
 /*Lavatrice.Spegniti();*/
+
+
+//Esercizio Csharp-shop3
+
+Acqua bottiglia = new Acqua("Vitasnella", "Acqua naturale", 0.5, 5, 1.5, 7, "vitas");
+
+bottiglia.StampaProdotto();
